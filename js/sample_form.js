@@ -1,6 +1,7 @@
 const NAME_PATTERN = RegExp('^[A-Z]{1}[a-z]{2,}$');
 const EMAIL_PATTERN = RegExp("^[a-z0-9]+([+._-][a-z0-9]+){0,1}@[a-z0-9]+[.][a-z]{2,4}([.][a-z]{2,4}){0,1}$");
 const PHONE_NUMBER_PATTERN = RegExp("^[0-9]{2}[ ][0-9]{10}$");
+const PASSWORD_PATERN = RegExp("^(?=.*[0-9])(?=.*[A-Z])(?=.{8,}$)[0-9a-zA-Z]*[@#$%][0-9a-zA-Z]*$");
 
 const text = document.querySelector('#text');
 const textError = document.querySelector('.text-error');
@@ -30,5 +31,25 @@ telephoneNumber.addEventListener('input', function() {
         telephoneNumberError.textContent = "";
     } else {
         telephoneNumberError.textContent = "telephone number is Incorrect";
+    }
+});
+
+const password = document.querySelector('#pwd');
+const passwordError = document.querySelector('.pwd-error');
+password.addEventListener('input', function() {
+    if (PASSWORD_PATERN.test(password.value)) {
+        passwordError.textContent = "";
+    } else {
+        passwordError.textContent = "Password is Incorrect";
+    }
+});
+
+const password = document.querySelector('#pwd');
+const passwordError = document.querySelector('.pwd-error');
+password.addEventListener('input', function() {
+    if (PASSWORD_PATERN.test(password.value)) {
+        passwordError.textContent = "";
+    } else {
+        passwordError.textContent = "Password is Incorrect";
     }
 });
